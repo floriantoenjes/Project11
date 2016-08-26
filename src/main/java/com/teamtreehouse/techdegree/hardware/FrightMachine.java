@@ -13,14 +13,6 @@ public class FrightMachine extends MotionDetector {
 
     private final List<Accessory> accessories = new ArrayList<>();
 
-    public FrightMachine() {
-        Arrays.asList(new Accessory[] {
-                new Horn(),
-                new Strobe(),
-                new CameraAdapter(new Camera())})
-            .forEach(a -> addAccessory(a));
-    }
-
     public boolean addAccessory(Accessory accessory) {
         return accessories.add(accessory);
     }
@@ -31,7 +23,6 @@ public class FrightMachine extends MotionDetector {
 
     @Override
     public void onMotionDetected() {
-        // TODO: This is hardcoded, we should make it more extensible!  :(
         accessories.forEach( a -> a.activate());
     }
 }
