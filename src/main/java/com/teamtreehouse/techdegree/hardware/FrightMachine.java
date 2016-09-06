@@ -23,6 +23,6 @@ public class FrightMachine extends MotionDetector {
 
     @Override
     public void onMotionDetected() {
-        accessories.forEach( a -> a.activate());
+        accessories.forEach(Accessory::activate);
     }
 }
